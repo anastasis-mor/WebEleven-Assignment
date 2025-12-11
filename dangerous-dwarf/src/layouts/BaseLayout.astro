@@ -10,27 +10,29 @@ const { title = "Portfolio", lang = "en" } = Astro.props;
 
     <title>{title}</title>
 
-    <!-- SEO basic tags -->
     <meta name="description" content="Personal portfolio website" />
     <meta name="keywords" content="portfolio, developer, web development" />
 
-    <!-- You can add OpenGraph tags later -->
     <meta property="og:title" content={title} />
 
-    <!-- Global stylesheet -->
     <link rel="stylesheet" href="/global.css" />
   </head>
 
   <body>
-    <!-- Header goes here (injected from pages) -->
     <slot name="header" />
 
     <main>
-      <!-- Page content goes here -->
       <slot />
     </main>
 
-    <!-- Footer goes here -->
     <slot name="footer" />
   </body>
 </html>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+</style>

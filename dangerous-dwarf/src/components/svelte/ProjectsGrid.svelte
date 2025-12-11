@@ -2,23 +2,15 @@
     export let t;
   import ProjectCard from "./ProjectCard.svelte";
 
-  const projects = [
-    {
-      title: "LoyalTree App",
-      description: "Loyaltree is a full-stack, multi-tenant loyalty platform enabling businesses to issue and manage digital rewards via web, mobile, and native apps.",
-      image: "/images/HomePageLoyaltree.png",
-      link: "https://loyaltree.io",
-    },
-    {
-      title: "Security Monitoring AI",
-      description: "Web application designed to identify unusual patterns in data streams.",
-      image: "/images/anomaly-alerts.jpg",
-      link: "https://github.com/anastasis-mor/Anomaly-Detector-Display",
-    },
-  ];
+ const projects = (t.projects.items as any[]).map((item: any, i: number) => ({
+  title: item.title,
+  description: item.description,
+  image: i === 0 ? "/images/HomePageLoyaltree.png" : "/images/anomaly-alerts.jpg",
+  link: i === 0 ? "https://loyaltree.io" : "https://github.com/anastasis-mor/Anomaly-Detector-Display"
+}));
 </script>
 
-<section class="projects-section">
+<section class="projects-section" id="projects">
   <h2 class="title">{t.projects.title}</h2>
 
   <div class="grid">

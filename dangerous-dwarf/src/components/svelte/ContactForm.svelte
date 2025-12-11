@@ -20,7 +20,7 @@
     </div>
 
     <div class="form-group">
-      <label for="email">{t.contact.email}l</label>
+      <label for="email">{t.contact.email}</label>
       <input id="email" type="email" bind:value={email} placeholder="Enter your email" />
     </div>
 

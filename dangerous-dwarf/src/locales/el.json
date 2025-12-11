@@ -2,7 +2,8 @@
   "hero": {
     "title": "Καλησπέρα, είμαι ο Αναστάσης",
     "tagline": "Full Stack Web Developer",
-    "cta": "Τα projects μου"
+    "ctaProjects": "Τα projects μου",
+    "ctaContact": "Επικοινώνησε μαζί μου"
   },
 
   "about": {
@@ -15,8 +16,18 @@
   },
 
   "projects": {
-    "title": "Τα Projects Μου"
-  },
+    "title": "Τα Projects Μου",
+        "items": [
+                {
+            "title": "LoyalTree App",
+            "description": "Το LoyalTree είναι μία full-stack πλατφόρμα loyalty που επιτρέπει στις επιχειρήσεις να εκδίδουν και να διαχειρίζονται ψηφιακές ανταμοιβές σε web, mobile και native εφαρμογές."
+                },
+                {
+            "title": "Security Monitoring AI",
+            "description": "Εφαρμογή που εντοπίζει ασυνήθιστα patterns σε ροές δεδομένων."
+                }
+            ]
+    },
 
   "contact": {
     "title": "Επικοινώνησε Μαζί Μου",
@@ -24,5 +35,12 @@
     "email": "Το Email σου",
     "message": "Μήνυμα",
     "send": "Αποστολή Μηνύματος"
+  },
+
+  "header": {
+    "home": "Αρχική",
+    "about": "Σχετικά",
+    "projects": "Projects",
+    "contact": "Επικοινωνία"
   }
 }

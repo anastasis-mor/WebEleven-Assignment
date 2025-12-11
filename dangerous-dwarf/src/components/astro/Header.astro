@@ -1,5 +1,5 @@
 ---
-const { lang = "en" } = Astro.props;
+const { lang = "en", t } = Astro.props;
 const base = `/${lang}`;
 ---
 
@@ -11,15 +11,15 @@ const base = `/${lang}`;
     </a>
 
     <ul class="nav-links">
-      <li><a href={`${base}#hero`}>Home</a></li>
-      <li><a href={`${base}#about`}>About</a></li>
-      <li><a href={`${base}#projects`}>Projects</a></li>
-      <li><a href={`${base}#contact`}>Contact</a></li>
+      <li><a href={`${base}#hero`}>{t.header.home}</a></li>
+      <li><a href={`${base}#about`}>{t.header.about}</a></li>
+      <li><a href={`${base}#projects`}>{t.header.projects}</a></li>
+      <li><a href={`${base}#contact`}>{t.header.contact}</a></li>
     </ul>
 
     <div class="lang-switch">
       <a href="/en/" class={lang === "en" ? "active" : ""}>EN</a>
-      <span>|</span>
+      <span class="divider">|</span>
       <a href="/el/" class={lang === "el" ? "active" : ""}>EL</a>
     </div>
 
@@ -29,18 +29,20 @@ const base = `/${lang}`;
 
 <style>
   .header {
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     background: rgba(0, 0, 0, 0.7);
-    position: sticky;
+    position: fixed;
     top: 0;
     backdrop-filter: blur(8px);
     z-index: 100;
+    width: 100%;
   }
 
   .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 4rem;
   }
 
   .logo {
@@ -58,6 +60,7 @@ const base = `/${lang}`;
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    padding: 0;
   }
 
   .nav-links a {
@@ -85,6 +88,10 @@ const base = `/${lang}`;
   .active {
     color: #3b82f6;
     font-weight: 600;
+  }
+
+  .divider {
+    color: rgba(255, 255, 255, 0.5);
   }
 
   @media (max-width: 768px) {

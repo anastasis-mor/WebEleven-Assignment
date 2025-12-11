@@ -1,20 +1,23 @@
 ---
-const { t } = Astro.props;
+const { lang = "en", t } = Astro.props;
+const base = `/${lang}`;
 ---
 
 <section class="hero">
   <div class="hero-content">
     <h1 class="hero-title">{t.hero.title}</h1>
     <p class="hero-tagline">{t.hero.tagline}</p>
-    <a href="#projects" class="cta-button">{t.hero.cta}</a>
+    <a href=`${base}#projects` class="cta-button-project">{t.hero.ctaProjects}</a>
+    <a href=`${base}#contact` class="cta-button-contact">{t.hero.ctaContact}</a>
   </div>
 </section>
 
 <style>
   .hero {
-    padding: 6rem 2rem;
+    padding: 10rem 2rem 6rem;
     text-align: center;
     background: linear-gradient(180deg, #0e0e0e, #1a1a1a);
+    color: #ffffff;
   }
 
   .hero-title {
@@ -29,19 +32,36 @@ const { t } = Astro.props;
     margin-top: 0.5rem;
   }
 
-  .cta-button {
+  .cta-button-project {
     display: inline-block;
     margin-top: 2rem;
     padding: 0.8rem 1.8rem;
     font-size: 1.1rem;
     border-radius: 6px;
-    background: #3b82f6;
+    background: #00060f;
     color: white;
     text-decoration: none;
     transition: 0.2s ease;
   }
 
-  .cta-button:hover {
-    background: #2563eb;
+   .cta-button-contact{
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.7rem 1.8rem;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    background: #ccc;
+    color: black;
+    text-decoration: none;
+    transition: 0.2s ease;
+   }
+
+  .cta-button-project:hover{
+    background: #011133;
   }
+
+   .cta-button-contact:hover {
+    background: #fffefe;
+   }
 </style>

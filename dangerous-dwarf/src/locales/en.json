@@ -2,7 +2,8 @@
   "hero": {
     "title": "Hello, I'm Anastasis",
     "tagline": "Full Stack Web Developer",
-    "cta": "View My Work"
+    "ctaProjects": "View My Work",
+    "ctaContact": "Contact Me"
   },
 
   "about": {
@@ -15,7 +16,17 @@
   },
 
   "projects": {
-    "title": "My Projects"
+    "title": "My Projects",
+        "items": [
+                {
+            "title": "LoyalTree App",
+            "description": "Loyaltree is a full-stack, multi-tenant loyalty platform enabling businesses to issue and manage digital rewards via web, mobile, and native apps."
+                },
+                {
+            "title": "Security Monitoring AI",
+            "description": "Web application designed to identify unusual patterns in data streams."
+                }
+                ]
   },
 
   "contact": {
@@ -24,5 +35,12 @@
     "email": "Your Email",
     "message": "Message",
     "send": "Send Message"
+  },
+
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
   }
 }
