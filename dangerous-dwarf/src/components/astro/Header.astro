@@ -1,0 +1,95 @@
+---
+const { lang = "en" } = Astro.props;
+const base = `/${lang}`;
+---
+
+<header class="header">
+  <nav class="nav">
+
+    <a href={base} class="logo">
+      Anastasis<span class="accent">.</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href={`${base}#hero`}>Home</a></li>
+      <li><a href={`${base}#about`}>About</a></li>
+      <li><a href={`${base}#projects`}>Projects</a></li>
+      <li><a href={`${base}#contact`}>Contact</a></li>
+    </ul>
+
+    <div class="lang-switch">
+      <a href="/en/" class={lang === "en" ? "active" : ""}>EN</a>
+      <span>|</span>
+      <a href="/el/" class={lang === "el" ? "active" : ""}>EL</a>
+    </div>
+
+  </nav>
+</header>
+
+
+<style>
+  .header {
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+  }
+
+  .accent {
+    color: #3b82f6;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: white;
+  }
+
+  .lang-switch a {
+    color: rgba(255, 255, 255, 0.75);
+    padding: 0 0.3rem;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+
+  .lang-switch a:hover {
+    color: white;
+  }
+
+  .active {
+    color: #3b82f6;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Later: replace with Svelte burger menu */
+    }
+  }
+</style>

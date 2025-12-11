@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/astro/Header.astro";
+import HeroSection from "../../components/astro/HeroSection.astro";
+import AboutSection from "../../components/astro/AboutSection.astro";
+import ProjectsGrid from "../../components/svelte/ProjectsGrid.svelte";
+import ContactForm from "../../components/svelte/ContactForm.svelte";
+
+import en from "../../locales/en.json";
+
+const lang = "en";
+const t = en;
+---
+
+<BaseLayout title="Home" lang={lang}>
+  <div slot="header">
+    <Header lang={lang} />
+  </div>
+
+  <HeroSection t={t} />
+  <AboutSection t={t} />
+  <ProjectsGrid client:visible t={t} />
+  <ContactForm client:visible t={t} />
+</BaseLayout>

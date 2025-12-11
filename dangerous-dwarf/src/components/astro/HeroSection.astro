@@ -1,0 +1,47 @@
+---
+const { t } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">{t.hero.title}</h1>
+    <p class="hero-tagline">{t.hero.tagline}</p>
+    <a href="#projects" class="cta-button">{t.hero.cta}</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(180deg, #0e0e0e, #1a1a1a);
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .hero-tagline {
+    font-size: 1.4rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+
+  .cta-button:hover {
+    background: #2563eb;
+  }
+</style>

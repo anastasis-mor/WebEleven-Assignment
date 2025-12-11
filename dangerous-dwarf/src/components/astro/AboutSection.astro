@@ -1,0 +1,54 @@
+---
+const { t } = Astro.props; 
+---
+
+<section class="about-section">
+  <div class="container">
+
+    <h2 class="title">{t.about.title}</h2>
+
+    <p class="description">
+      {t.about.description}
+    </p>
+
+    <h3 class="subtitle">{t.about.goalsTitle}</h3>
+    <p class="description">{t.about.goalsDescription}</p>
+
+    <h3 class="subtitle">{t.about.interviewTitle}</h3>
+    <p class="description">{t.about.interviewDescription}</p>
+
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 4rem 2rem;
+    background: #111;
+    color: #fff;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+</style>

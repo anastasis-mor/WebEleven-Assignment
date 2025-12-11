@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Hello, I'm Anastasis",
+    "tagline": "Full Stack Web Developer",
+    "cta": "View My Work"
+  },
+
+  "about": {
+    "title": "About Me",
+    "description": "My name is Anastasis, and I am a Full Stack Web Developer with experience in building modern applications using JavaScript, Typescript, React, Java and more.  I enjoy solving problems and learning new technologies.",
+    "goalsTitle": "My Goals (Next 5 Years)",
+    "goalsDescription": "In the next five years, I aim to grow into a Senior Full Stack Developer, contribute to large projects, and expand expand my expreniece and knowledge into the web development.",
+    "interviewTitle": "What I Enjoyed in the Interview",
+    "interviewDescription": "During the interview, I really enjoyed the discussion overall and the new technologies that the company use."
+  },
+
+  "projects": {
+    "title": "My Projects"
+  },
+
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Message",
+    "send": "Send Message"
+  }
+}
