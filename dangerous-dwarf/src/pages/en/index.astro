@@ -6,11 +6,13 @@ import AboutSection from "../../components/astro/AboutSection.astro";
 import ProjectsGrid from "../../components/svelte/ProjectsGrid.svelte";
 import ContactForm from "../../components/svelte/ContactForm.svelte";
 import Footer from "../../components/astro/Footer.astro";
+import { fetchAbout } from "../../helpers/api";
 
 import en from "../../locales/en.json";
 
 const lang = "en";
 const t = en;
+const about = await fetchAbout(lang, Astro.url);
 ---
 
 <BaseLayout
@@ -23,7 +25,7 @@ const t = en;
   </div>
 
   <HeroSection t={t} />
-  <AboutSection t={t} />
+  <AboutSection about={about} />
   <ProjectsGrid client:visible t={t} />
   <ContactForm client:visible t={t} />
   <Footer/>
