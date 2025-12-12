@@ -5,6 +5,7 @@ import HeroSection from "../../components/astro/HeroSection.astro";
 import AboutSection from "../../components/astro/AboutSection.astro";
 import ProjectsGrid from "../../components/svelte/ProjectsGrid.svelte";
 import ContactForm from "../../components/svelte/ContactForm.svelte";
+import Footer from "../../components/astro/Footer.astro";
 
 import el from "../../locales/el.json";
 
@@ -12,7 +13,11 @@ const lang = "el";
 const t = el;
 ---
 
-<BaseLayout title="Αρχική" lang={lang}>
+<BaseLayout
+  title={t.seo.title}
+  description={t.seo.description}
+  lang={lang}
+>
   <div slot="header">
     <Header lang={lang} t={t}/>
   </div>
@@ -21,4 +26,5 @@ const t = el;
   <AboutSection t={t} />
   <ProjectsGrid client:visible t={t} />
   <ContactForm client:visible t={t} />
+  <Footer/>
 </BaseLayout>

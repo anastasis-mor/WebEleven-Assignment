@@ -10,10 +10,15 @@
 }));
 </script>
 
-<section class="projects-section" id="projects">
-  <h2 class="title">{t.projects.title}</h2>
+<section
+  id="projects"
+  class="py-20 px-4 bg-neutral-950 text-white text-center"
+>
+  <h2 class="text-3xl font-extrabold mb-10">
+    {t.projects.title}
+  </h2>
 
-  <div class="grid">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {#each projects as p}
       <ProjectCard {...p} />
     {/each}
@@ -21,19 +26,6 @@
 </section>
 
 <style>
-  .projects-section {
-    padding: 4rem 2rem;
-    background: #0e0e0e;
-    color: white;
-    text-align: center;
-  }
-
-  .title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 2.5rem;
-  }
-
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

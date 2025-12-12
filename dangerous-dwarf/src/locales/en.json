@@ -42,5 +42,14 @@
     "about": "About",
     "projects": "Projects",
     "contact": "Contact"
+  },
+  "placeholders": {
+    "name": "Enter your name",
+    "email": "Enter your email",
+    "message": "Write your message..."
+  },
+  "seo": {
+  "title": "Anastasis – Full Stack Web Developer",
+  "description": "Portfolio of Anastasis, Full Stack Web Developer specializing in modern web applications."
   }
 }

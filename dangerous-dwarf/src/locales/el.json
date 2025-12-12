@@ -42,5 +42,14 @@
     "about": "Σχετικά",
     "projects": "Projects",
     "contact": "Επικοινωνία"
+  },
+   "placeholders": {
+    "name": "Γράψε το όνομά σου",
+    "email": "Γράψε το email σου",
+    "message": "Γράψε το μήνυμά σου..."
+  },
+  "seo": {
+  "title": "Αναστάσης – Full Stack Web Developer",
+  "description": "Το portfolio του Αναστάση, Full Stack Web Developer που ειδικεύεται σε σύγχρονες web εφαρμογές."
   }
 }

@@ -6,7 +6,7 @@
 </script>
 
 <div class="card" on:click={() => window.open(link, "_blank")}>
-  <img src={image} alt={title} class="thumbnail" />
+  <img src={image} alt={title} class="thumbnail" loading="lazy" />
 
   <div class="content">
     <h3>{title}</h3>
