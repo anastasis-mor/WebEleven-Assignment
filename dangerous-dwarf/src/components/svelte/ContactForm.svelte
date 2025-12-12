@@ -52,7 +52,7 @@
 
     <button
       type="submit"
-      class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-md transition"
+      class="mt-4 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-md transition"
     >
       {t.contact.send}
     </button>

@@ -7,7 +7,7 @@ const base = `/${lang}`;
   <nav class="nav">
 
     <a href={base} class="logo">
-      Anastasis<span class="accent">.</span>
+      Anastasis<span class="text-orange-600">Dev</span><span>.</span>
     </a>
 
     <ul class="nav-links">
@@ -18,10 +18,30 @@ const base = `/${lang}`;
     </ul>
 
     <div class="lang-switch">
-      <a href="/en/" class={lang === "en" ? "active" : ""}>EN</a>
-      <span class="divider">|</span>
-      <a href="/el/" class={lang === "el" ? "active" : ""}>EL</a>
-    </div>
+  <a
+    href="/en/"
+    class={`transition
+      ${lang === "en"
+        ? "text-orange-600 font-semibold"
+        : "text-white hover:text-white"}
+    `}
+  >
+    EN
+  </a>
+
+  <span class="text-white/40">|</span>
+
+  <a
+    href="/el/"
+    class={`transition
+      ${lang === "el"
+        ? "text-orange-600 font-semibold"
+        : "text-white hover:text-white"}
+    `}
+  >
+    EL
+  </a>
+</div>
 
   </nav>
 </header>
@@ -52,15 +72,12 @@ const base = `/${lang}`;
     text-decoration: none;
   }
 
-  .accent {
-    color: #3b82f6;
-  }
 
   .nav-links {
     list-style: none;
     display: flex;
     gap: 1.5rem;
-    padding: 0;
+    padding: 0 6rem 0 0;
   }
 
   .nav-links a {
@@ -74,16 +91,6 @@ const base = `/${lang}`;
     color: white;
   }
 
-  .lang-switch a {
-    color: rgba(255, 255, 255, 0.75);
-    padding: 0 0.3rem;
-    text-decoration: none;
-    transition: 0.2s ease;
-  }
-
-  .lang-switch a:hover {
-    color: white;
-  }
 
   .active {
     color: #3b82f6;

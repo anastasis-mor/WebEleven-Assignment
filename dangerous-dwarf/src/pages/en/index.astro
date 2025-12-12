@@ -24,7 +24,7 @@ const about = await fetchAbout(lang, Astro.url);
     <Header lang={lang} t={t}/>
   </div>
 
-  <HeroSection t={t} />
+  <HeroSection lang={lang} t={t} />
   <AboutSection about={about} />
   <ProjectsGrid client:visible t={t} />
   <ContactForm client:visible t={t} />

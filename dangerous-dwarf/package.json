@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.5",
     "svelte": "^5.45.8",
+    "svelte-inview": "^4.0.4",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   }
