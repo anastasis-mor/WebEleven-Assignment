@@ -3,107 +3,140 @@ const { lang = "en", t } = Astro.props;
 const base = `/${lang}`;
 ---
 
-<header class="header">
-  <nav class="nav">
+<header
+  class="fixed top-0 z-50 w-full
+         bg-black/70 backdrop-blur-md
+         border-b border-white/10"
+>
+  <nav class="mx-auto max-w-7xl px-4">
+    <div class="flex h-16 items-center justify-between">
 
-    <a href={base} class="logo">
-      Anastasis<span class="text-orange-600">Dev</span><span>.</span>
-    </a>
+      <a href={base} class="text-2xl font-extrabold text-white">
+        Anastasis<span class="text-orange-600">Dev</span><span>.</span>
+      </a>
 
-    <ul class="nav-links">
-      <li><a href={`${base}#hero`}>{t.header.home}</a></li>
-      <li><a href={`${base}#about`}>{t.header.about}</a></li>
-      <li><a href={`${base}#projects`}>{t.header.projects}</a></li>
-      <li><a href={`${base}#contact`}>{t.header.contact}</a></li>
-    </ul>
+      <ul class="hidden md:flex items-center gap-6">
+        <li>
+          <a
+            href={`${base}#hero`}
+            class="text-white/80 hover:text-white transition"
+          >
+            {t.header.home}
+          </a>
+        </li>
+        <li>
+          <a
+            href={`${base}#about`}
+            class="text-white/80 hover:text-white transition"
+          >
+            {t.header.about}
+          </a>
+        </li>
+                <li>
+          <a
+            href={`${base}#projects`}
+            class="text-white/80 hover:text-white transition"
+          >
+            {t.header.projects}
+          </a>
+        </li>
+                <li>
+          <a
+            href={`${base}#contact`}
+            class="text-white/80 hover:text-white transition"
+          >
+            {t.header.contact}
+          </a>
+        </li>
+      </ul>
 
-    <div class="lang-switch">
-  <a
-    href="/en/"
-    class={`transition
-      ${lang === "en"
-        ? "text-orange-600 font-semibold"
-        : "text-white hover:text-white"}
-    `}
-  >
-    EN
-  </a>
+      <div class="flex items-center gap-4">
 
-  <span class="text-white/40">|</span>
+        <div class="hidden md:flex items-center gap-2 text-md">
+          <a
+            href="/en/"
+            class={lang === "en"
+              ? "text-orange-600 font-semibold"
+              : "text-white/80 hover:text-white"}
+          >
+            EN
+          </a>
+          <span class="text-white/40">|</span>
+          <a
+            href="/el/"
+            class={lang === "el"
+              ? "text-orange-600 font-semibold"
+              : "text-white/80 hover:text-white"}
+          >
+            EL
+          </a>
+        </div>
 
-  <a
-    href="/el/"
-    class={`transition
-      ${lang === "el"
-        ? "text-orange-600 font-semibold"
-        : "text-white hover:text-white"}
-    `}
-  >
-    EL
-  </a>
-</div>
-
+        <button
+          id="menu-btn"
+          class="md:hidden text-white focus:outline-none"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+      </div>
+    </div>
   </nav>
+
+  <div
+  id="mobile-menu"
+  class="hidden md:hidden
+         fixed top-16 inset-x-0
+         bg-black/95 backdrop-blur-md
+         border-t border-white/10"
+>
+  <ul class="flex flex-col items-center gap-6 py-8">
+    <li>
+      <a href={`${base}#hero`} class="text-white/90 text-lg hover:text-orange-600 transition">
+        {t.header.home}
+      </a>
+    </li>
+    <li>
+      <a href={`${base}#about`} class="text-white/90 text-lg hover:text-orange-600 transition">
+        {t.header.about}
+      </a>
+    </li>
+    <li>
+      <a href={`${base}#projects`} class="text-white/90 text-lg hover:text-orange-600 transition">
+        {t.header.projects}
+      </a>
+    </li>
+    <li>
+      <a href={`${base}#contact`} class="text-white/90 text-lg hover:text-orange-600 transition">
+        {t.header.contact}
+      </a>
+    </li>
+
+    <div class="flex gap-6 pt-4 text-sm">
+      <a href="/en/" class={lang === "en" ? "text-orange-600 font-semibold" : "text-white/70"}>
+        EN
+      </a>
+      <a href="/el/" class={lang === "el" ? "text-orange-600 font-semibold" : "text-white/70"}>
+        EL
+      </a>
+    </div>
+  </ul>
+</div>
 </header>
 
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
 
-<style>
-  .header {
-    padding: 1rem 1rem;
-    background: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    backdrop-filter: blur(8px);
-    z-index: 100;
-    width: 100%;
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.add("hidden");
+      });
+    });
   }
-
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 4rem;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: white;
-    text-decoration: none;
-  }
-
-
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    padding: 0 6rem 0 0;
-  }
-
-  .nav-links a {
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.2s ease;
-  }
-
-  .nav-links a:hover {
-    color: white;
-  }
-
-
-  .active {
-    color: #3b82f6;
-    font-weight: 600;
-  }
-
-  .divider {
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none; /* Later: replace with Svelte burger menu */
-    }
-  }
-</style>
+</script>

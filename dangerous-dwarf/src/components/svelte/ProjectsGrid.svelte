@@ -30,19 +30,10 @@
     {t.projects.title}
   </h2>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {#each projects as p, i}
-      <ProjectCard {...p} index={i} />
-    {/each}
-  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6 py-4">
+  {#each projects as p, i}
+    <ProjectCard {...p} index={i} />
+  {/each}
+</div>
 </section>
 
-
-<style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem 0;
-  }
-</style>

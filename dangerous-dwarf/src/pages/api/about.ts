@@ -15,9 +15,7 @@ export async function GET({ request }: { request: Request }) {
     JSON.stringify({
       title: t.about.title,
       description: t.about.description,
-      goalsTitle: t.about.goalsTitle,
       goalsDescription: t.about.goalsDescription,
-      interviewTitle: t.about.interviewTitle,
       interviewDescription: t.about.interviewDescription,
       card1Title: t.about.cards.card1Title,
       card1Subtitle: t.about.cards.card1Subtitle,

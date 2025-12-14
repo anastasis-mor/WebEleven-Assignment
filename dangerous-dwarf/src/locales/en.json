@@ -9,16 +9,14 @@
   "about": {
     "title": "About Me",
     "description": "My name is Anastasis, and I am a Full Stack Web Developer with experience in building modern applications using JavaScript, Typescript, React, Java and more.  I enjoy solving problems and learning new technologies.",
-    "goalsTitle": "My Goals (Next 5 Years)",
     "goalsDescription": "In the next five years, I aim to grow into a Senior Full Stack Developer, contribute to large projects, and expand expand my expreniece and knowledge into the web development.",
-    "interviewTitle": "What I Enjoyed in the Interview",
     "interviewDescription": "During the interview, I really enjoyed the discussion overall and the new technologies that the company use.",
       "cards":{
       "card1Title":"Who I Am",
       "card1Subtitle":"Full Stack Web Developer",
       "card2Title":"Goals (5 Years)",
       "card2Subtitle":"Career growth & impact",
-      "card3Title":"What I Enjoyed",
+      "card3Title":"What I Enjoyed in the Interview",
       "card3Subtitle":"The interview experience"
     }
   },

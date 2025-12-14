@@ -10,14 +10,16 @@
   let visible = false;
 </script>
 
-<div
+<a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
   use:inview={{ threshold: 0.15 }}
   on:inview_enter={() => (visible = true)}
   style={`transition-delay: ${index * 120}ms`}
-  on:click={() => window.open(link, "_blank")}
   class={`
-    cursor-pointer overflow-hidden rounded-xl bg-neutral-800
-    transition-all duration-500 will-change-transform
+    block overflow-hidden rounded-xl bg-neutral-800
+    transition-all duration-500 ease-out delay-300 will-change-transform
     hover:-translate-y-1.5 hover:shadow-xl hover:shadow-black/40
     ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
   `}
@@ -38,4 +40,4 @@
       {description}
     </p>
   </div>
-</div>
+</a>
