@@ -3,16 +3,21 @@
   import ProjectCard from "./ProjectCard.svelte";
   import { inview } from "svelte-inview";
 
-  const projects = (t.projects.items as any[]).map((item: any, i: number) => ({
-    title: item.title,
-    description: item.description,
-    image: i === 0
-      ? "/images/HomePageLoyaltree.png"
-      : "/images/anomaly-alerts.jpg",
-    link: i === 0
-      ? "https://loyaltree.io"
-      : "https://github.com/anastasis-mor/Anomaly-Detector-Display"
-  }));
+const images = [
+  "/images/HomePageLoyaltree.png",
+  "/images/anomaly-alerts.jpg"
+];
+
+const links = [
+  "https://loyaltree.io",
+  "https://github.com/anastasis-mor/Anomaly-Detector-Display"
+];
+
+const projects = t.projects.items.map((item: any, i:any) => ({
+  ...item,
+  image: images[i],
+  link: links[i]
+}));
 
   let visible = false;
 </script>

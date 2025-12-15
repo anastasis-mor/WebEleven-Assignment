@@ -123,6 +123,7 @@ Scroll-based animations implemented using **svelte-inview**:
 - Meta title & description
 - Open Graph meta tags
 - Language attributes
+- Sitemap.xml available at `/sitemap.xml`
 - Lazy-loaded images
 
 ---
